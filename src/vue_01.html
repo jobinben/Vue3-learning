@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue3.2.20</title>
+    <script src="../lib/vue-next@3.2.20.js"></script>
+</head>
+<body>
+    <div id="app"></div>
+
+    <template id="my-temp">
+        <!-- 多行文本框 -->
+        <label for="interduce">
+            自我介绍:
+            <textarea name="interduce" id="interduce" cols="30" rows="10" v-model="interduce"></textarea>
+        </label>
+        <h2>描述: {{interduce}}</h2>
+
+        <!-- 1. 单选框 -->
+        <label for="agree">
+            <input type="checkbox" name="agree" id="agree" v-model="isAgree">
+            同意协议
+        </label>
+        <h2>isAgree: {{isAgree}}</h2>
+
+        <!-- 2. 多选框 -->
+        <label for="basketball">
+            <input type="checkbox" name="basketball" id="basketball" v-model="hobbies" value="篮球">
+            篮球
+        </label>
+        <label for="football">
+            <input type="checkbox" name="football" id="football" v-model="hobbies"value="足球" >
+            足球
+        </label>
+        <label for="tennis">
+            <input type="checkbox" name="tennis" id="tennis" v-model="hobbies" value="网球">
+            网球
+        </label>
+        <h2>hobbies: {{hobbies}}</h2>
+
+        <!-- 3. radio -->
+        <label for="gender">
+            <input type="radio" name="gender" id="gender" v-model="gender" value="male">男
+            <input type="radio" name="gender" id="gender" v-model="gender" value="female">女
+        </label>
+        <h2>gender: {{gender}}</h2>
+
+        <!-- 4. select -->
+        <label for="fruit">
+            喜欢的水果:
+            <select name="fruit" id="fruit" v-model="fruits">
+                <option value="apple">苹果</option>
+                <option value="banana">香蕉</option>
+                <option value="orange">橘子</option>
+                <option value="grape">葡萄</option>
+            </select>
+        </label>
+        <h2>fruits: {{fruits}}</h2>
+        <!-- 4. select 多选-->
+        <label for="fruit">
+            喜欢的水果:
+            <select name="fruit" id="fruit" v-model="fruits2" multiple size="2">
+                <option value="apple">苹果</option>
+                <option value="banana">香蕉</option>
+                <option value="orange">橘子</option>
+                <option value="grape">葡萄</option>
+            </select>
+        </label>
+        <h2>fruits: {{fruits2}}</h2>
+    </template>
+    
+
+    <script>
+
+    const vm = {
+        template: '#my-temp',
+        data() {
+            return {
+                interduce: 'Hello Vue3!',
+                isAgree: false,
+                hobbies: ['足球'],
+                gender: 'female',
+                fruits: '',
+                fruits2: []
+
+            }
+        },
+    }
+    
+    Vue.createApp(vm).mount('#app')
+    </script>
+</body>
+</html>
