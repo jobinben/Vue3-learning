@@ -5,7 +5,7 @@
     <button @click="getParentAndRoot">获取父元素和根元素</button>
 
     <template v-if="$parent.names">
-      <h2>我是在other组件里渲染App组件的names : </h2>
+      <h2>我是在other组件里渲染App组件的names: </h2>
       <span  v-for="item in $parent.names" :key="item">{{ item }},</span>
     </template>
   </div>
