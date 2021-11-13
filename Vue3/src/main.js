@@ -1,4 +1,4 @@
 import { createApp } from 'vue'
-import App from './components/09_gsap第三方动画库/App.vue'
+import App from './components/10_mixin和extend/App.vue'
 
 createApp(App).mount('#app')
