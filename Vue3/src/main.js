@@ -1,4 +1,4 @@
-import { createApp } from 'vue'
-import App from './components/13_computed和watch的使用/App.vue'
+import { createApp } from "vue"
+import App from "./components/13_computed和watch的使用/App.vue"
 
-createApp(App).mount('#app')
+createApp(App).mount("#app")
