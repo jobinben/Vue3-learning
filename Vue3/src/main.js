@@ -1,4 +1,4 @@
 import { createApp } from "vue"
-import App from "./components/16_provide和inject/App.vue"
+import App from "./components/17_compositionApi的练习/App.vue"
 
 createApp(App).mount("#app")
