@@ -1,15 +1,18 @@
 <!-- author: 大冰 -->
 <template>
     <div>
-        <home />
+        <home/>
+        <transition-time/>
     </div>
 </template>
 
 <script>
+import TransitionTime from "./TransitionTime.vue"
 import Home from "./Home.vue"
 export default {
     
     components: {
+        TransitionTime,
         Home
     }
 }

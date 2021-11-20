@@ -2,7 +2,7 @@
 <template>
     <div>
         <input type="text" v-focus>
-        <button v-jobin.abc.trim="'i am custom direactive!'" v-if="counter < 2" @click="counter++">当前计数: {{counter}}</button>
+        <button v-jobin.abc.trim="'i am custom directive!'" v-if="counter < 2" @click="counter++">当前计数: {{counter}}</button>
     </div>
 </template>
 
@@ -26,26 +26,26 @@ export default {
 
             },
             beforeMount() {
-                console.log('direactive beforeMount')
+                console.log('directive beforeMount')
             },
             mounted() {
-                console.log('direactive mounted')
+                console.log('directive mounted')
                 
             },
             beforeUpdate() {
-                console.log('direactive beforeUpdate')
+                console.log('directive beforeUpdate')
                 
             },
             updated() {
-                console.log('direactive beforeMount')
+                console.log('directive beforeMount')
                 
             },
             beforeUnmount() {
-                console.log('direactive beforeUnmount')
+                console.log('directive beforeUnmount')
                 
             },
             unmounted() {
-                console.log('direactive unmounted')
+                console.log('directive unmounted')
                 
             },
         }
