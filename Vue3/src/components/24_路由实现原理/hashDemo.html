@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>路由实现原理</title>
+</head>
+<body>
+    <div id="app">
+        <a href="#/home">Home</a>
+        <a href="#/about">About</a>
+    </div>
+
+    <div id="container"></div>
+
+    <script>
+        // 1. 准备一个容器
+        const el = document.querySelector("#container")
+
+        // 2. 监听锚点hash的变化
+        window.addEventListener('hashchange', () => {
+            
+            console.log(location.hash) // 获取当前url的锚点hash的值
+
+            switch(location.hash) {
+                case '#/home':
+                    el.innerHTML = 'Home Page'
+                    break;
+                case '#/about':
+                    el.innerHTML = 'About Page'
+                    break
+                default:
+                    el.innerHTML = 'Default Page'
+            }
+        })
+
+    </script>
+</body>
+</html>
