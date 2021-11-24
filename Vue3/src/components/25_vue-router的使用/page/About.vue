@@ -3,6 +3,8 @@
     <div>
         <h2>
             About page 
+
+            {{$route.query}}
         </h2>
     </div>
 </template>
