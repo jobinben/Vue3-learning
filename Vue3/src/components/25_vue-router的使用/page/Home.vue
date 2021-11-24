@@ -4,6 +4,11 @@
         <h2>
             Home vue 
         </h2>
+
+        <router-view></router-view>
+
+        <router-link to="/home/message">消息</router-link>
+        <router-link to="/home/goods">商品</router-link>
     </div>
 </template>
 

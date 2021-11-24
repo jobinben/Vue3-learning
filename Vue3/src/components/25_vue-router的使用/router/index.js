@@ -12,9 +12,25 @@ import { createRouter, createWebHashHistory, createWebHistory } from "vue-router
 // ]
 // 懒加载配置模式
 const routes = [
-    {path: '/', redirect: '/home'},
-    { path: '/home', component: () => import(/* webpackChunkName: "myHome" */"../page/Home.vue")},
-    { path: '/about', component: () => import(/* webpackChunkName: "myAbout" */"../page/About.vue") }
+    { path: '/', redirect: '/home' },
+    {
+        path: '/home',
+        component: () => import("../page/Home.vue"),
+        // 配置嵌套路由
+        children: [
+            {path: 'message', component: () => import('../page/HomeMsg.vue')},
+            {path: 'goods', component: () => import('../page/HomeGoods.vue')}
+        ]
+    },
+    { path: '/about', component: () => import("../page/About.vue") },
+    { path: '/user/:username', component: () => import("../page/User.vue") },
+
+    // 配置not found 页面
+    { path: '/:pathMatch(.*)', component: () => import('../page/NotFound.vue') }
+    // 多一个*匹配符就是把route.params.pathMatch参数的字符串以/分割为数组
+    // {path: '/:pathMatch(.*)*', component: () => import('../page/NotFound.vue')}
+
+
 ]
 
 // 创建路由对象
