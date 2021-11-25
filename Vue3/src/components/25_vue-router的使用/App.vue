@@ -19,6 +19,7 @@
         </router-link>
         <router-link to="/about">关于</router-link>
         <router-link to="/user/jobin">用户</router-link>
+        <router-link to="/category">分类</router-link>
 
         <button @click="jumpToAbout">跳转到关于</button>
         <!-- 显示区域 -->
