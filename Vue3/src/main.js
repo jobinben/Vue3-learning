@@ -1,6 +1,6 @@
 import {createApp} from "vue"
 import  vuex from "./store"
-import App from "./components/26_vuex状态管理的使用/App.vue"
+import App from "./components/27_vuex的getter属性/App.vue"
 
 const app = createApp(App)
 
