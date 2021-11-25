@@ -27,6 +27,11 @@ const store = createStore({
 
         decrement(state) {
             state.counter--
+        },
+        // 第二个参数payload 额外参数传入
+        incrementN(state, payload) {
+            console.log(payload)
+            state.counter = state.counter + payload.num
         }
     },
 
@@ -35,7 +40,7 @@ const store = createStore({
         // getter里面的属性都包含两个属性 state, 和 getter （指向本身作用域）
         totalBookPrice(state, getters) {
             let totalPrice = 0
-            for(const book of state.books) {
+            for (const book of state.books) {
                 totalPrice += book.price * book.count
             }
             return totalPrice
@@ -43,10 +48,10 @@ const store = createStore({
 
         getTotalCountGreateN(state, getters) {
             // 通过返回的函数，调用此函数传入参数
-            return function(n) {
+            return function (n) {
                 let totalPrice = 0
-                for(const book of state.books) {
-                    if(book.count > n) {
+                for (const book of state.books) {
+                    if (book.count > n) {
                         totalPrice += book.price * book.count
                     }
                 }
@@ -60,7 +65,7 @@ const store = createStore({
         // getters的使用
         disCountTotalPrice(state, getters) {
             let totalPrice = 0
-            for(const book of state.books) {
+            for (const book of state.books) {
                 totalPrice += book.price * book.count
             }
             return totalPrice * getters.currentDiscount
@@ -75,11 +80,10 @@ const store = createStore({
         genderInfo(state) {
             return `gender: ${state.gender}`
         },
-
-
-
     }
 
 })
 
+
+//  1. state存放 => mutation修改 => getter获取
 export default store

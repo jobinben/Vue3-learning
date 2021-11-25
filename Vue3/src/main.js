@@ -1,6 +1,6 @@
 import {createApp} from "vue"
 import  vuex from "./store"
-import App from "./components/27_vuex的getter属性/App.vue"
+import App from "./components/28_vuex的mutation属性使用/App.vue"
 
 const app = createApp(App)
 
