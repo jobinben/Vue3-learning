@@ -1,9 +1,9 @@
 import {createApp} from "vue"
-import  router from "./components/25_vue-router的使用/router"
-import App from "./components/25_vue-router的使用/App.vue"
+import  vuex from "./store"
+import App from "./components/26_vuex状态管理的使用/App.vue"
 
 const app = createApp(App)
 
-app.use(router) // 使用路由
+app.use(vuex) // 使用Vuex状态管理
 
 app.mount("#app")
