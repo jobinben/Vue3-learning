@@ -1,6 +1,7 @@
 // Vuex的状态管理
 import { createStore } from "vuex"
 import axios from "axios"
+import userModule from "./modules/user"
 
 const store = createStore({
     // 1. 存放数据状态
@@ -128,6 +129,11 @@ const store = createStore({
         }
 
 
+    },
+
+    // 5. modules的使用
+    modules: {
+        user:　userModule
     }
 
 })
