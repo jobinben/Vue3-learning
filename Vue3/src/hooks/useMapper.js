@@ -2,10 +2,10 @@ import { computed } from "vue"
 import { useStore } from "vuex"
 
 // 重置版- 组合mapState和mapGetters
-export default function(keys, mapFn) {
+export default function(data, mapFn) {
     const store = useStore()
 
-    const storeGettersFns = mapFn(keys)
+    const storeGettersFns = mapFn(data)
 
     const storeGetters = {} 
 

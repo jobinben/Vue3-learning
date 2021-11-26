@@ -1,5 +1,11 @@
-import { mapState } from "vuex"
+import { mapState, createNamespacedHelpers } from "vuex"
 import useMapper from "./useMapper"
-export default function (state) {
-    return useMapper(state, mapState)
+
+// 重置版 支持模块
+export default function (name, states) {
+    let mapFn = mapState
+    if(typeof name === 'string' && name.length > 0 ) {
+        mapFn = createNamespacedHelpers(name).mapState
+    }
+    return useMapper(states, mapFn)
 }

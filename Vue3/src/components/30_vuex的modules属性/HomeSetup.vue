@@ -13,21 +13,27 @@
 <script>
 // 写法一和写法二
 // import { mapState, mapGetters, mapMutations, mapActions} from "vuex"
+import useState from "../../hooks/useMapState"
+import useGetters from "../../hooks/useGetters"
 // 写法三 推荐!
 import { createNamespacedHelpers } from 'vuex'
 
-const { mapState, mapGetters, mapMutations, mapActions } =
-    createNamespacedHelpers('user')
+const { mapMutations, mapActions } = createNamespacedHelpers('user')
+
+
 
 export default {
     setup(){
 
-        
+        const mapStoreState = useState('user', ['userCounter'])
+        const mapStoreGetters = useGetters('user', ['doubleCounter'])
         
         const mapMutationsFns = mapMutations(['increment'])
         const mapActionsFns = mapActions(['incrementAction'])
 
         return {
+            ...mapStoreState,
+            ...mapStoreGetters,
             ...mapMutationsFns,
             ...mapActionsFns
         }

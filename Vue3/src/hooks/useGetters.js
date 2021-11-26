@@ -1,5 +1,11 @@
-import { mapGetters} from "vuex"
+import { mapGetters, createNamespacedHelpers } from "vuex"
 import useMapper from "./useMapper"
-export default function(keys) {
-    return useMapper(keys, mapGetters)
+
+// 重置版 支持模块
+export default function (name, getters) {
+    let mapFn = mapGetters
+    if (typeof name === 'string' && name.length > 0) {
+        mapFn = createNamespacedHelpers(name).mapGetters
+    }
+    return useMapper(getters, mapFn)
 }
