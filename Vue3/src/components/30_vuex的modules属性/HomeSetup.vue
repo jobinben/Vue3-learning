@@ -20,8 +20,6 @@ import { createNamespacedHelpers } from 'vuex'
 
 const { mapMutations, mapActions } = createNamespacedHelpers('user')
 
-
-
 export default {
     setup(){
 
