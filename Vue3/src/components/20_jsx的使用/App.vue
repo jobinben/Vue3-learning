@@ -1,6 +1,8 @@
-// <!-- author: 大冰 -->
-// 1. Vite在启动时会做依赖的预构建
-// 2. 预构建，运行时默认都只会对jsx与tsx做语法转换。
+
+
+
+<script lang='jsx'>
+// 解决之前在.vue无法解析jsx的原因 是我的script标签忘记加上 lang='jsx'属性
 export default {
     data() {
 
@@ -15,6 +17,7 @@ export default {
 
         return (
             <div>
+                <h2>script标签要加上lang='jsx'才能解析</h2>
                 <h2>当前计数: {this.counter}</h2>
                 <button onClick={increment}>+1</button>
                 <button onClick={decrement}>-1</button>
@@ -22,3 +25,5 @@ export default {
         )
     },
 }
+
+</script>
